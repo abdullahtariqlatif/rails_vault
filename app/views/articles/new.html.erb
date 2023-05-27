@@ -1,0 +1,21 @@
+<h1>New Article</h1>
+
+<%= form_with model: @article, method: :post do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <!-- text_field(object_name, method, options = {}) public  -->
+    <!-- Example: text_field(:post, :title, class: "create_input") -->
+    <!-- But In This case the object_name is 'form' as it represents the attributes for the @article object-->
+    <!-- <form builder object>.method_name(<attribute name>,  <hash of html attributes>) -->
+    <%= form.text_field :title, {} %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body , {}%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
